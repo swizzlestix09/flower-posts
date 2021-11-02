@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 
 function App({ value, onIncrement, onDecrement, onIncrementAsync }) {
@@ -8,6 +8,8 @@ function App({ value, onIncrement, onDecrement, onIncrementAsync }) {
     dispatch({ type: "SET_POSTS" });
   }, [dispatch]);
 
+  const posts = useSelector((state) => state.posts);
+  console.log(posts)
   return (
       <div>
         <div>{value}</div>

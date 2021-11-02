@@ -1,14 +1,14 @@
 import {createStore, applyMiddleware} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import reducer from '../reducers/reducers'
-import rootSaga from '../sagas/sagas'
+import fetchPostsData from '../sagas/sagas'
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(reducer, {}, applyMiddleware(sagaMiddleware));
 
-sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(fetchPostsData);
 
-const action = type => store.dispatch({type})
+//const action = type => store.dispatch({type})
 
-export {store, action};
+export {store};
