@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+function App({ value, onIncrement, onDecrement, onIncrementAsync }) {
+return (<div>
+  <button onClick={onIncrementAsync}>
+    Increment after 1 second
+  </button>
+  {' '}
+  <button onClick={onIncrement}>
+    Increment
+  </button>
+  {' '}
+  <button onClick={onDecrement}>
+    Decrement
+  </button>
+  <hr />
+  <div>
+    Clicked: {value} times
+  </div>
+</div>
+)
+};
 
 export default App;
