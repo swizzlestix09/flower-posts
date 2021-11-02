@@ -1,7 +1,11 @@
-export default function posts(state = [], action) {
+const initialState = [];
+
+export default function reducer(state = initialState, action) {
+  console.log( 'in reducer ', action)
   switch (action.type) {
     case "SET_POSTS":
-      return state = [ ...action.data];
+      const posts = action.payload;
+      return state = [...posts];
     default:
       return state;
   }
