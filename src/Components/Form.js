@@ -5,7 +5,7 @@ const Form = () => {
   const { register, handleSubmit, formState: { errors }} = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    console.dir(data);
   };
 
   return (
@@ -48,14 +48,10 @@ const Form = () => {
       <input
         type="text"
         {...register("body", {
-          required: true,
-          pattern: /[a-zA-Z]*\W/g,
+          required: true
         })}
       /><br/>
-      {errors?.body?.type === "required" && <p>This field is required</p>}
-      {errors?.body?.type === "pattern" && (
-        <p>Alphabetical characters only</p>
-      )}
+      {errors?.body?.type === "required" && <p>This field is required</p>}<br/>
       <input type="submit" />
     </form>
   );
