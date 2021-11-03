@@ -1,19 +1,16 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
+import React from "react";
+import Form from "./Components/Form";
+import Search from "./Components/Search";
 
-function App({ value, onIncrement, onDecrement, onIncrementAsync }) {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch({ type: "SET_POSTS" });
-  }, [dispatch]);
+function App({ value }) {
 
-  const posts = useSelector((state) => state.posts);
-  console.log(posts)
   return (
-      <div>
-        <div>{value}</div>
-      </div>
+    <div>
+      <div>{value}</div>
+      <Search />
+      <Form />
+    </div>
   );
 }
 

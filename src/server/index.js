@@ -8,10 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', express.static('../../public'));
 
-app.get( (req, res) => {
+app.get('/posts', (req, res) => {
   // axios.get('http://jsonplaceholder.typicode.com/posts')
-  //   .then(res => {
-  //     console.log(res.data);
+  //   .then(data => {
+  //     console.log(data.data)
+  //     res.send(data.data);
   //   })
   //   .catch(error => {
   //     res.send(error);
