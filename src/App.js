@@ -18,9 +18,9 @@ function App() {
     <div className="mainDivs">
       <Search />
       <Form />
-      <div>{posts ? posts.map(post => (
+      <h5>{posts ? posts.map(post => (
         <p>{post}</p>
-      )) : <p>cannot compute</p>}</div>
+      )) : <p>cannot compute</p>}</h5>
     </div>
   );
 }
