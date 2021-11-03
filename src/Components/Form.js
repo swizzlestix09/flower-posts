@@ -14,31 +14,23 @@ const Form = () => {
       <input
         {...register("userId", {
           required: true,
-          maxLength: 2,
-          pattern: /^[0-9]{2}/,
+          maxLength: 2
         })}
       /><br/>
       {errors?.userId?.type === "required" && <p>This field is required</p>}
       {errors?.userId?.type === "maxLength" && (
         <p>userId cannot exceed 2 characters</p>
       )}
-      {errors?.userId?.type === "pattern" && (
-        <p>Numberical characters only</p>
-      )}
       <label>Id:</label><br/>
       <input
         {...register("id", {
           required: true,
-          maxLength: 3,
-          pattern: /^[0-9]{3}/,
+          maxLength: 3
         })}
       /><br/>
       {errors?.id?.type === "required" && <p>This field is required</p>}
       {errors?.id?.type === "maxLength" && (
         <p>id cannot exceed 3 characters</p>
-      )}
-      {errors?.id?.type === "pattern" && (
-        <p>Numberical characters only</p>
       )}
       <label>Title</label><br/>
       <input

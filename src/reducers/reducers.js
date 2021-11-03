@@ -20,6 +20,7 @@ export default function reducer(state = initialState, action) {
       console.log('in reducer ', action.payload)
       return state = { posts: action.payload };
     default:
+      console.log('in reducer ', state)
       return state;
     }
 }

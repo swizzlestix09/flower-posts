@@ -17,9 +17,11 @@ function App() {
   console.log('what is posts? ', posts);
   return (
     <div className="mainDivs">
-      <div>{posts}</div>
       <Search />
       <Form />
+      <div>{posts ? posts.map(post => (
+        <p>{post}</p>
+      )) : <p>cannot compute</p>}</div>
     </div>
   );
 }
