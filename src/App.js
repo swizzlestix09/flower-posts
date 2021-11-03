@@ -14,7 +14,6 @@ function App() {
 
   const posts = useSelector((state) => state.posts);
 
-  console.log('what is posts? ', posts);
   return (
     <div className="mainDivs">
       <Search />

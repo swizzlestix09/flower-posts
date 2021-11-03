@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { Provider } from "react-redux";
+import store from "./store/store";
 
-test('renders learn react link', async () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Increment after 1 second/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders search form', async () => {
+  render(<Provider store={store}><App /></Provider>);
+  const checkDiv = screen.getByText(/Search by title/i);
+  expect(checkDiv).toBeInTheDocument();
 });
+
